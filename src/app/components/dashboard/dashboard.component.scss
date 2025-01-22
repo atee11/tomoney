@@ -29,7 +29,8 @@ p {
   font-size: 20px;
   color: #ffffff; 
   display: flex;
-  width: 200px;
+  width: 100%;
+  box-sizing: border-box;
   justify-content: space-between;
   font-weight: bold;
   border-radius: 5px;

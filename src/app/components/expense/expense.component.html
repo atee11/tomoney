@@ -14,7 +14,8 @@
     <ul>
         <li *ngFor="let expense of expenses; let i = index" class="expense-item">
             <span class="expense-details">
-                {{ expense.name }}: {{ expense.amount | currency: 'HUF':'symbol':'1.0-0' }}
+                <span class="income-name">{{ expense.name }}:</span>
+                <span class="income-amount">{{ expense.amount | currency: 'HUF':'symbol':'1.0-0' }}</span>
             </span>
             <button class="delete-btn" (click)="removeExpense(i)">-</button>
         </li>

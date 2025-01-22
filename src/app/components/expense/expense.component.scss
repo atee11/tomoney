@@ -29,7 +29,7 @@ $expense-color: $light-red;
     input[type="text"],
     input[type="number"],
     select {
-      padding: 8px;
+      padding: 14px;
       border: 1px solid #ccc;
       border-radius: $border-radius;
       width: 100%;
@@ -53,8 +53,22 @@ $expense-color: $light-red;
 
     .expense-details {
       display: flex;
-      justify-content: space-between;
-      gap: 80px;
+      width: 280px; /* Rugalmasan kitölti a rendelkezésre álló helyet */
+      justify-content: space-between; /* Bal és jobb oldal között helyet hagy */
+      align-items: center; /* Függőleges középre igazítás */
+    }
+    
+    .expense-name {
+      overflow: hidden; /* Ha a név túl hosszú, elrejti a felesleget */
+      text-overflow: ellipsis; /* Három pontot helyez el a szöveg végére */
+      white-space: nowrap; /* Egy sorban tartja a szöveget */
+      max-width: 70%; /* A név maximális szélessége a rendelkezésre álló helyből */
+    }
+    
+    .expense-amount {
+      white-space: nowrap; /* Az összeg egy sorban marad */
+      margin-left: auto; /* Az összeg a jobb oldalra tolása */
+      text-align: right; /* Jobbra igazított szöveg */
     }
 
     .delete-btn {
