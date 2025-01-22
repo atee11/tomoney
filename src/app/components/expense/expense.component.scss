@@ -1,0 +1,180 @@
+$primary-red: #f72585;
+$dark-red: #d32f2f;
+$light-red: #f44336;
+$white: #ffffff;
+$border-radius: 20px;
+$font-size-default: 16px;
+$icon-size: 24px;
+$remaining-balance-color: #4caf50;
+$remaining-balance-bg: #d9f7d9;
+$expense-color: $light-red;
+
+.transaction-container {
+  width: 100%;
+  padding: 20px;
+  margin-top: 12px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px, rgba(0, 0, 0, 0.2) 0px 2px 4px;
+  border-radius: 10px;
+  background-color: #fff;
+
+  .transaction-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    position: relative;
+
+    input[type="text"],
+    input[type="number"],
+    select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: $border-radius;
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    .expense-item {
+      display: flex; /* Flexbox a törlés gomb pozícionálásához */
+      align-items: center; /* Függőleges igazítás középre */
+      justify-content: space-between; /* Távolság a szöveg és a gomb között */
+      margin-bottom: 10px;
+      padding: 0 5px;
+      border-bottom: 1px solid #ccc; /* Alsó vonal a sorok elválasztására */
+    }
+
+    .expense-details {
+      display: flex;
+      justify-content: space-between;
+      gap: 80px;
+    }
+
+    .delete-btn {
+      background-color: $primary-red;
+      color: $white;
+      border: none;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+      &:hover {
+        background-color: $dark-red;
+      }
+    }
+  }
+
+  .add-expense-btn {
+    background-color: $primary-red;
+    color: $white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: $font-size-default;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+    &:hover {
+      background-color: $dark-red;
+    }
+
+    .material-icons {
+      font-size: $icon-size;
+    }
+  }
+
+  .remaining-balance {
+    background-color: $remaining-balance-bg;
+    color: $remaining-balance-color;
+    padding: 10px;
+    border-radius: $border-radius;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  .clear-all-btn {
+    padding: 8px 12px;
+    background-color: $primary-red;
+    color: $white;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+    &:hover {
+      background-color: $dark-red;
+    }
+  }
+
+  /* Mobil nézet */
+  @media (max-width: 600px) {
+    padding: 10px;
+
+    .transaction-form {
+      gap: 5px;
+      justify-content: flex-start;
+
+      input[type="text"],
+      input[type="number"],
+      select {
+        max-width: 225px;
+      }
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 225px;
+    }
+
+    .input-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 10px;
+    }
+
+    .add-expense-btn {
+      position: relative;
+      left: 4%;
+      top: -32px;
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+    }
+
+    .delete-btn {
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+    }
+
+    .clear-all-btn {
+      width: 100%;
+    }
+
+    button {
+      padding: 12px !important;
+      font-size: 18px !important;
+      border-radius: 50px !important;
+      margin: 16px 0;
+    }
+  }
+}

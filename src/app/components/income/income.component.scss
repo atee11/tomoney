@@ -1,0 +1,188 @@
+$green: #2a9d8f;
+$green-dark: #45a049;
+$white: #ffffff;
+$border-radius: 20px;
+
+.transaction-container {
+  width: 100%;
+  padding: 20px;
+  margin-top: 12px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px, rgba(0, 0, 0, 0.2) 0px 2px 4px;
+  border-radius: 10px;
+  background-color: #fff;
+
+  .transaction-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    position: relative;
+
+    input[type="text"],
+    input[type="number"],
+    select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: $border-radius;
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    .income-item {
+      display: flex;
+      align-items: center; /* Középre igazítás függőlegesen */
+      justify-content: space-between; /* A gomb és a részletek között helyet hagy */
+      padding: 0 5px;
+      border-bottom: 1px solid #ccc; /* Alsó elválasztó vonal */
+    }
+    
+    .income-details {
+      display: flex;
+      width: 280px; /* Rugalmasan kitölti a rendelkezésre álló helyet */
+      justify-content: space-between; /* Bal és jobb oldal között helyet hagy */
+      align-items: center; /* Függőleges középre igazítás */
+    }
+    
+    .income-name {
+      overflow: hidden; /* Ha a név túl hosszú, elrejti a felesleget */
+      text-overflow: ellipsis; /* Három pontot helyez el a szöveg végére */
+      white-space: nowrap; /* Egy sorban tartja a szöveget */
+      max-width: 70%; /* A név maximális szélessége a rendelkezésre álló helyből */
+    }
+    
+    .income-amount {
+      white-space: nowrap; /* Az összeg egy sorban marad */
+      margin-left: auto; /* Az összeg a jobb oldalra tolása */
+      text-align: right; /* Jobbra igazított szöveg */
+    }
+
+    .delete-btn {
+      background-color: $green;
+      color: $white;
+      border: none;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+
+      &:hover {
+        background-color: $green-dark;
+      }
+    }
+  }
+
+  button {
+    padding: 8px 12px;
+    background-color: $green;
+    color: $white;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+    &:hover {
+      background-color: $green-dark;
+    }
+  }
+
+  .add-transaction-btn {
+    background-color: $green;
+    color: $white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $green-dark;
+    }
+
+    .material-icons {
+      font-size: 24px;
+    }
+  }
+
+  .clear-all-btn {
+    padding: 8px 12px;
+    background-color: $green;
+    color: $white;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $green-dark;
+    }
+  }
+
+  /* Mobil nézet */
+  @media (max-width: 600px) {
+    padding: 10px;
+
+    .transaction-form {
+      gap: 5px;
+      justify-content: flex-start;
+
+      input[type="text"],
+      input[type="number"],
+      select {
+        max-width: 225px;
+      }
+    }
+
+    .input-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 10px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 225px;
+    }
+
+    .add-transaction-btn {
+      position: relative;
+      left: 4%;
+      top: -32px;
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+    }
+
+    .delete-btn {
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+    }
+
+    .clear-all-btn {
+      width: 100%;
+    }
+
+    button {
+      padding: 12px !important;
+      font-size: 18px !important;
+      border-radius: 50px !important;
+      margin: 16px 0;
+    }
+  }
+}

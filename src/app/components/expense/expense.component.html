@@ -1,0 +1,25 @@
+<div class="transaction-container">
+    <h2>Kiadás</h2>
+
+    <!-- Új kiadás hozzáadása -->
+    <div class="transaction-form">
+        <input [(ngModel)]="amount" type="text" placeholder="Összeg" (input)="formatAmount()" />
+        <input [(ngModel)]="name" type="text" placeholder="Kiadás neve" />
+        <button class="add-expense-btn" (click)="addTransaction()">
+            <span class="material-icons">add</span>
+        </button>
+    </div>
+
+    <!-- Kiadások listája -->
+    <ul>
+        <li *ngFor="let expense of expenses; let i = index" class="expense-item">
+            <span class="expense-details">
+                {{ expense.name }}: {{ expense.amount | currency: 'HUF':'symbol':'1.0-0' }}
+            </span>
+            <button class="delete-btn" (click)="removeExpense(i)">-</button>
+        </li>
+    </ul>
+
+    <!-- Csak a kiadások törlése -->
+    <button class="clear-all-btn" (click)="clearAllExpenses()">Kiadások törlése</button>
+</div>

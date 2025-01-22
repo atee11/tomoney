@@ -1,0 +1,26 @@
+<div class="transaction-container">
+    <h2>Bevétel</h2>
+
+    <!-- Új bevétel hozzáadása -->
+    <div class="transaction-form">
+        <input [(ngModel)]="amount" type="text" placeholder="Összeg" (input)="formatAmount()" />
+        <input [(ngModel)]="name" type="text" placeholder="Bevétel neve" />
+        <button class="add-transaction-btn" (click)="addTransaction()" aria-label="Add Transaction">
+            <span class="material-icons">add</span>
+        </button>
+    </div>
+
+    <!-- Bevételek listája -->
+    <ul>
+        <li *ngFor="let income of incomes; let i = index" class="income-item">
+            <span class="income-details">
+                <span class="income-name">{{ income.name }}:</span>
+                <span class="income-amount">{{ income.amount | currency: 'HUF':'symbol':'1.0-0' }}</span>
+            </span>
+            <button class="delete-btn" (click)="removeIncome(i)">-</button>
+        </li>
+    </ul>
+
+    <!-- Csak a bevételek törlése -->
+    <button class="clear-all-btn" (click)="clearAllIncomes()">Bevételek törlése</button>
+</div>

@@ -1,0 +1,20 @@
+<div>
+  <!-- Chart komponens -->
+  <app-chart [totalIncome]="totalIncome" [totalExpense]="totalExpense" [remainingBalance]="remainingBalance">
+  </app-chart>
+
+  <div class="mainAmount">
+    <p class="income">Bevétel: <span>{{ totalIncome | currency:'HUF':'symbol':'1.0-0' }}</span></p>
+    <p class="expense">Kiadás: <span>{{ totalExpense | currency:'HUF':'symbol':'1.0-0' }}</span></p>
+    <p class="balance">Zsebpénz: <span>{{ remainingBalance | currency: 'HUF':'symbol':'1.0-0' }}</span></p>
+  </div>
+
+  <!-- Bevételek -->
+  <app-income></app-income>
+
+  <!-- Kiadások -->
+  <app-expense></app-expense>
+
+  <!-- <button (click)="clearAll()">Clear All Data</button> -->
+   <app-footer></app-footer>
+</div>

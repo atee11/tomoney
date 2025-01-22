@@ -1,0 +1,109 @@
+/* Alap p beállítások */
+$color-income: #7209b7; 
+$color-expense: #f72585; 
+$color-remaining-balance: #2a9d8f; 
+
+.mainAmount {
+  margin: 22px auto;
+}
+
+.logo {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    margin: 0 auto;
+  }
+}
+
+.title {
+  margin: 20px auto;
+  text-align: center;
+  font-size: 40px;
+}
+
+p {
+  padding: 16px;
+  font-size: 20px;
+  color: #ffffff; 
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 10px auto;
+  position: relative;
+  z-index: 1;
+  background-color: #ffffff; /* Semleges háttér */
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4); /* Belső árnyék, bemélyedés hatás */
+}
+
+/* Bevétel színe */
+.income {
+  background-color: $color-income; /* Semleges háttér */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; /* Erősebb belső árnyék */
+}
+
+/* Kiadás színe */
+.expense {
+  background-color: $color-expense; /* Semleges háttér */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; /* Erősebb belső árnyék */
+}
+
+/* Fennmaradó egyenleg színe */
+.balance {
+  background-color: $color-remaining-balance; /* Semleges háttér */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; /* Erősebb belső árnyék */
+}
+
+/* Inputok beállítása */
+input[type="text"],
+input[type="number"] {
+  background-color: #fff; /* Fehér háttér */
+  color: #333; /* Sötét szöveg, hogy olvasható legyen */
+  border: 1px solid #ccc; /* Szürke szegély */
+  border-radius: 5px; /* Lekerekített sarkok */
+  padding: 10px; /* Belső tér */
+  font-size: 16px;
+}
+
+/* Fókuszáláskor az inputok */
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #4caf50; /* Zöld szín a fókuszáláskor */
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.4); /* Erősebb belső árnyék */
+}
+
+/* Mobil nézet beállítások */
+.chart-container {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Pie chart beállítások */
+ngx-charts-pie-chart {
+  border-radius: 15px;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2); /* Belső árnyék a chart-on */
+}
+
+/* Pie chart szövegek eltüntetése */
+ngx-charts-pie-chart text {
+  display: none;
+}
+
+/* Mobil nézetben a chart és címkék */
+@media (max-width: 600px) {
+  .chart-container {
+    height: 80vh;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  ngx-charts-pie-chart text {
+    display: none;
+  }
+}
