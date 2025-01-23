@@ -1,7 +1,7 @@
 {
-  "name": "tomoney",
-  "short_name": "tomoney",
-  "theme_color": "#1976d2",
+  "name": "ToMoney",
+  "short_name": "ToMoney",
+  "theme_color": "#7209b7",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
